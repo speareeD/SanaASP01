@@ -13,4 +13,9 @@ public class MainController : Controller
     {
         return View();
     }
+    public IActionResult Form()
+    {
+        return View("PreferencesForm");
+    }
+    
 }
