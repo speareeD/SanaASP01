@@ -1,18 +1,45 @@
-﻿@model TModel
+﻿@model PersonPreferences
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-4 shadow-sm rounded bg-light">
+            <h2 class="mb-4 text-primary">User Preferences</h2>
+            @using (Html.BeginForm("PreferencesForm", "Main", FormMethod.Post))
+            {
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.FirstName, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Enter first first name" })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger small" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.LastName, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter first last name" })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger small" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.SelectedCountry, new { @class = "form-label fw-bold" })
+                    @Html.DropDownListFor(m => m.SelectedCountry, new SelectList(Model.Countries), "-- Select --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.SelectedCountry, "", new { @class = "text-danger small" })
+                </div>
+                <div class="mb-3 form-check">
+                    @Html.CheckBoxFor(m => m.SubscribeToNewsletter, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => m.SubscribeToNewsletter, new { @class = "form-check-label" })
+                </div>
+                <div class="mb-3">
+                    <label class="d-block fw-bold mb-2">Gender</label>
+                    <div class="form-check form-check-inline">
+                        @Html.RadioButtonFor(m => m.Gender, "Male", new { @id = "genderMale", @class = "form-check-input" })
+                        <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        @Html.RadioButtonFor(m => m.Gender, "Female", new { @id = "genderFemale", @class = "form-check-input" })
+                        <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                </div>
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-</body>
-</html>
