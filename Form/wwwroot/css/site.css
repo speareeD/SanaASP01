@@ -29,3 +29,41 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.img-usa {
+  width: 350px;
+  height: 300px;
+  background-image: url(../images/CarUsa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -150px;
+}
+.img-italy {
+  width: 350px;
+  height: 300px;
+  background-image: url(../images/ItalyCar.webp);
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: -75px;
+}
+.img-france {
+  width: 350px;
+  height: 300px;
+  background-image: url(../images/FranceCar.webp);
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: -75px;
+}
+
+div[class^="img-"]:hover {
+  cursor: pointer;
+}
+
+.success {
+  display: flex;
+  justify-content: space-between;
+  text-wrap: wrap;
+}
+
+.success h4 {
+  /*display: inline;*/
+}
