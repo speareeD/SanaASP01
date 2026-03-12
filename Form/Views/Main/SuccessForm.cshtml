@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Cars</title>
+</head>
+<body>
+<div>
+    <h4>User data: </h4>
+    <p>First Name: @ViewBag.FirstName</p>
+    <p>Last Name: @ViewBag.LastName</p>
+    <p>Gender: @ViewBag.Gender</p>
+    <p>Country: @ViewBag.Country (shows different brands of cars depend on the country)</p>
+    <p>Is subscribed to newsletter: @ViewBag.SubscribeToNewsletter</p>
+</div>
+<div class="success">
+
+    @if (ViewBag.Country == "USA")
+    {
+        <div>
+            <div class="img-usa"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-usa"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-usa"></div>
+            <h4>$20000</h4>
+        </div>
+    }
+    else if (ViewBag.Country == "Italy")
+    {
+        <div>
+            <div class="img-italy"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-italy"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-italy"></div>
+            <h4>$20000</h4>
+        </div>
+    }
+    else if (ViewBag.Country == "France")
+    {
+        <div>
+            <div class="img-france"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-france"></div>
+            <h4>$20000</h4>
+        </div>
+        <div>
+            <div class="img-france"></div>
+            <h4>$20000</h4>
+        </div>
+    }
+</div>
+</body>
+</html>
