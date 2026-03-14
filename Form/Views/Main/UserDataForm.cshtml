@@ -34,6 +34,9 @@
                         @Html.RadioButtonFor(m => m.Gender, "Female", new { @id = "genderFemale", @class = "form-check-input" })
                         <label class="form-check-label" for="genderFemale">Female</label>
                     </div>
+                    <div>
+                        @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger small" })
+                    </div>
                 </div>
 
                 <div class="d-grid mt-4">
